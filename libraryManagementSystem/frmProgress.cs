@@ -16,5 +16,21 @@ namespace libraryManagementSystem
         {
             InitializeComponent();
         }
+
+        private void tmrProgBar_Tick(object sender, EventArgs e)
+        {
+            if(prbProgBar.Value < 100)
+            {
+                prbProgBar.Value = prbProgBar.Value + 1;
+            }
+            else
+            {
+                frmHome home = new frmHome();
+                home.Visible = true;
+                this.Visible = false;
+                home.lblUserHome.Text = lblUserPB.Text;
+                home.lblUserTypeHome.Text = lblUserTypePB.Text;
+            }
+        }
     }
 }

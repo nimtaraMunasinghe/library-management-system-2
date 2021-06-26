@@ -136,5 +136,10 @@ namespace libraryManagementSystem
             home.Visible = true;
             this.Visible = false;
         }
+
+        private void frmUserManagement_Load(object sender, EventArgs e)
+        {
+            lblDateUM.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
     }
 }

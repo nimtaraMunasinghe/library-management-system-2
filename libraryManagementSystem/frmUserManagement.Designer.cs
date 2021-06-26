@@ -264,6 +264,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.lblUserUM);
             this.Name = "frmUserManagement";
             this.Text = "User Management";
+            this.Load += new System.EventHandler(this.frmUserManagement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

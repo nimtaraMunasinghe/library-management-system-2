@@ -135,6 +135,8 @@ namespace libraryManagementSystem
             frmHome home = new frmHome();
             home.Visible = true;
             this.Visible = false;
+            home.lblUserHome.Text = lblUserUM.Text;
+            home.lblUserTypeHome.Text = lblUserTypeUM.Text;
         }
 
         private void frmUserManagement_Load(object sender, EventArgs e)

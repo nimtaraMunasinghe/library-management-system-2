@@ -67,6 +67,7 @@ namespace libraryManagementSystem
             this.label12 = new System.Windows.Forms.Label();
             this.grbMember = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblUserTypeBI = new System.Windows.Forms.Label();
             this.grbIssue.SuspendLayout();
             this.grbBook.SuspendLayout();
             this.grbMember.SuspendLayout();
@@ -424,11 +425,21 @@ namespace libraryManagementSystem
             this.label9.TabIndex = 3;
             this.label9.Text = "Address";
             // 
+            // lblUserTypeBI
+            // 
+            this.lblUserTypeBI.AutoSize = true;
+            this.lblUserTypeBI.Location = new System.Drawing.Point(46, 63);
+            this.lblUserTypeBI.Name = "lblUserTypeBI";
+            this.lblUserTypeBI.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypeBI.TabIndex = 24;
+            this.lblUserTypeBI.Text = "User Type";
+            // 
             // frmIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 643);
+            this.Controls.Add(this.lblUserTypeBI);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.grbIssue);
             this.Controls.Add(this.btnDelete);
@@ -493,5 +504,6 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox grbMember;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label lblUserTypeBI;
     }
 }

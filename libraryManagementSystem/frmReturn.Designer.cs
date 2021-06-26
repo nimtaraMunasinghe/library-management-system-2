@@ -67,6 +67,7 @@ namespace libraryManagementSystem
             this.lblReturnDate = new System.Windows.Forms.Label();
             this.btnSearchIssueID = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.lblUserTypeBR = new System.Windows.Forms.Label();
             this.grbBook.SuspendLayout();
             this.grbMember.SuspendLayout();
             this.grbReturn.SuspendLayout();
@@ -424,11 +425,21 @@ namespace libraryManagementSystem
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
+            // lblUserTypeBR
+            // 
+            this.lblUserTypeBR.AutoSize = true;
+            this.lblUserTypeBR.Location = new System.Drawing.Point(37, 67);
+            this.lblUserTypeBR.Name = "lblUserTypeBR";
+            this.lblUserTypeBR.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypeBR.TabIndex = 33;
+            this.lblUserTypeBR.Text = "User Type";
+            // 
             // frmReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 673);
+            this.Controls.Add(this.lblUserTypeBR);
             this.Controls.Add(this.grbBook);
             this.Controls.Add(this.grbMember);
             this.Controls.Add(this.btnExit);
@@ -493,5 +504,6 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Label lblReturnDate;
         private System.Windows.Forms.Button btnSearchIssueID;
         private System.Windows.Forms.Button btnClear;
+        public System.Windows.Forms.Label lblUserTypeBR;
     }
 }

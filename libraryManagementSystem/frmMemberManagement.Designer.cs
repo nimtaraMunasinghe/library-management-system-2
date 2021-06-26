@@ -50,6 +50,7 @@ namespace libraryManagementSystem
             this.lblDateMM = new System.Windows.Forms.Label();
             this.lblUserMM = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblUserTypeMM = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnHome
@@ -229,11 +230,21 @@ namespace libraryManagementSystem
             this.label1.TabIndex = 21;
             this.label1.Text = "Member Management";
             // 
+            // lblUserTypeMM
+            // 
+            this.lblUserTypeMM.AutoSize = true;
+            this.lblUserTypeMM.Location = new System.Drawing.Point(45, 64);
+            this.lblUserTypeMM.Name = "lblUserTypeMM";
+            this.lblUserTypeMM.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypeMM.TabIndex = 42;
+            this.lblUserTypeMM.Text = "User Type";
+            // 
             // frmMemberManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 695);
+            this.Controls.Add(this.lblUserTypeMM);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -285,5 +296,6 @@ namespace libraryManagementSystem
         public System.Windows.Forms.Label lblDateMM;
         public System.Windows.Forms.Label lblUserMM;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblUserTypeMM;
     }
 }

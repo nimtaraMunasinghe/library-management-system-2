@@ -56,6 +56,7 @@ namespace libraryManagementSystem
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblUserTypeBM = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnHome
@@ -283,11 +284,21 @@ namespace libraryManagementSystem
             this.label1.TabIndex = 27;
             this.label1.Text = "Book Management";
             // 
+            // lblUserTypeBM
+            // 
+            this.lblUserTypeBM.AutoSize = true;
+            this.lblUserTypeBM.Location = new System.Drawing.Point(64, 61);
+            this.lblUserTypeBM.Name = "lblUserTypeBM";
+            this.lblUserTypeBM.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypeBM.TabIndex = 54;
+            this.lblUserTypeBM.Text = "User Type";
+            // 
             // frmBookManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 797);
+            this.Controls.Add(this.lblUserTypeBM);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
@@ -351,5 +362,6 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblUserTypeBM;
     }
 }

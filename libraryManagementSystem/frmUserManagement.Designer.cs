@@ -50,6 +50,7 @@ namespace libraryManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.lblDateUM = new System.Windows.Forms.Label();
             this.lblUserUM = new System.Windows.Forms.Label();
+            this.lblUserTypeUM = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtContactNumber
@@ -236,11 +237,21 @@ namespace libraryManagementSystem
             this.lblUserUM.TabIndex = 42;
             this.lblUserUM.Text = "User";
             // 
+            // lblUserTypeUM
+            // 
+            this.lblUserTypeUM.AutoSize = true;
+            this.lblUserTypeUM.Location = new System.Drawing.Point(43, 82);
+            this.lblUserTypeUM.Name = "lblUserTypeUM";
+            this.lblUserTypeUM.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypeUM.TabIndex = 63;
+            this.lblUserTypeUM.Text = "User Type";
+            // 
             // frmUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 625);
+            this.Controls.Add(this.lblUserTypeUM);
             this.Controls.Add(this.txtContactNumber);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnHome);
@@ -293,5 +304,6 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblDateUM;
         public System.Windows.Forms.Label lblUserUM;
+        public System.Windows.Forms.Label lblUserTypeUM;
     }
 }

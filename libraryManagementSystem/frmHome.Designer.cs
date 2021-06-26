@@ -31,12 +31,12 @@ namespace libraryManagementSystem
         {
             this.lblDateHome = new System.Windows.Forms.Label();
             this.lblUserHome = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnUser = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnIssue = new System.Windows.Forms.Button();
+            this.btnBook = new System.Windows.Forms.Button();
+            this.btnMember = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUserTypeHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -59,59 +59,65 @@ namespace libraryManagementSystem
             this.lblUserHome.TabIndex = 16;
             this.lblUserHome.Text = "User";
             // 
-            // button6
+            // btnExit
             // 
-            this.button6.Location = new System.Drawing.Point(417, 357);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(187, 23);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(417, 357);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(187, 23);
+            this.btnExit.TabIndex = 15;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // button5
+            // btnUser
             // 
-            this.button5.Location = new System.Drawing.Point(151, 357);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(187, 23);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "User Management";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnUser.Location = new System.Drawing.Point(151, 357);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(187, 23);
+            this.btnUser.TabIndex = 14;
+            this.btnUser.Text = "User Management";
+            this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
-            // button4
+            // btnReturn
             // 
-            this.button4.Location = new System.Drawing.Point(417, 284);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(187, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Book Return";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnReturn.Location = new System.Drawing.Point(417, 284);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(187, 23);
+            this.btnReturn.TabIndex = 13;
+            this.btnReturn.Text = "Book Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // button3
+            // btnIssue
             // 
-            this.button3.Location = new System.Drawing.Point(151, 284);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Book Issue";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnIssue.Location = new System.Drawing.Point(151, 284);
+            this.btnIssue.Name = "btnIssue";
+            this.btnIssue.Size = new System.Drawing.Size(187, 23);
+            this.btnIssue.TabIndex = 12;
+            this.btnIssue.Text = "Book Issue";
+            this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
-            // button2
+            // btnBook
             // 
-            this.button2.Location = new System.Drawing.Point(417, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Book Management";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBook.Location = new System.Drawing.Point(417, 215);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(187, 23);
+            this.btnBook.TabIndex = 11;
+            this.btnBook.Text = "Book Management";
+            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
-            // button1
+            // btnMember
             // 
-            this.button1.Location = new System.Drawing.Point(151, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Member Management";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMember.Location = new System.Drawing.Point(151, 215);
+            this.btnMember.Name = "btnMember";
+            this.btnMember.Size = new System.Drawing.Size(187, 23);
+            this.btnMember.TabIndex = 10;
+            this.btnMember.Text = "Member Management";
+            this.btnMember.UseVisualStyleBackColor = true;
+            this.btnMember.Click += new System.EventHandler(this.btnMember_Click);
             // 
             // label1
             // 
@@ -139,15 +145,16 @@ namespace libraryManagementSystem
             this.Controls.Add(this.lblUserTypeHome);
             this.Controls.Add(this.lblDateHome);
             this.Controls.Add(this.lblUserHome);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnUser);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnIssue);
+            this.Controls.Add(this.btnBook);
+            this.Controls.Add(this.btnMember);
             this.Controls.Add(this.label1);
             this.Name = "frmHome";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,12 +164,12 @@ namespace libraryManagementSystem
 
         public System.Windows.Forms.Label lblDateHome;
         public System.Windows.Forms.Label lblUserHome;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnIssue;
+        private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Button btnMember;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblUserTypeHome;
     }

@@ -87,6 +87,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.lblUserPB);
             this.Name = "frmProgress";
             this.Text = "Loading...";
+            this.Load += new System.EventHandler(this.frmProgress_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -42,7 +42,7 @@ namespace libraryManagementSystem
             this.prbProgBar.Location = new System.Drawing.Point(76, 170);
             this.prbProgBar.Name = "prbProgBar";
             this.prbProgBar.Size = new System.Drawing.Size(688, 35);
-            this.prbProgBar.TabIndex = 5;
+            this.prbProgBar.TabIndex = 0;
             // 
             // lblDatePB
             // 
@@ -61,6 +61,11 @@ namespace libraryManagementSystem
             this.lblUserPB.Size = new System.Drawing.Size(38, 17);
             this.lblUserPB.TabIndex = 3;
             this.lblUserPB.Text = "User";
+            // 
+            // tmrProgBar
+            // 
+            this.tmrProgBar.Enabled = true;
+            this.tmrProgBar.Tick += new System.EventHandler(this.tmrProgBar_Tick);
             // 
             // lblUserTypePB
             // 
@@ -82,6 +87,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.lblUserPB);
             this.Name = "frmProgress";
             this.Text = "Loading...";
+            this.Load += new System.EventHandler(this.frmProgress_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

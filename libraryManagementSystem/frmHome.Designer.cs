@@ -38,6 +38,7 @@ namespace libraryManagementSystem
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblUserTypeHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDateHome
@@ -121,11 +122,21 @@ namespace libraryManagementSystem
             this.label1.TabIndex = 9;
             this.label1.Text = "Home";
             // 
+            // lblUserTypeHome
+            // 
+            this.lblUserTypeHome.AutoSize = true;
+            this.lblUserTypeHome.Location = new System.Drawing.Point(46, 67);
+            this.lblUserTypeHome.Name = "lblUserTypeHome";
+            this.lblUserTypeHome.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypeHome.TabIndex = 18;
+            this.lblUserTypeHome.Text = "User Type";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 439);
+            this.Controls.Add(this.lblUserTypeHome);
             this.Controls.Add(this.lblDateHome);
             this.Controls.Add(this.lblUserHome);
             this.Controls.Add(this.button6);
@@ -153,5 +164,6 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblUserTypeHome;
     }
 }

@@ -76,6 +76,7 @@ namespace libraryManagementSystem
             this.btnHome.TabIndex = 60;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnDelete
             // 
@@ -85,6 +86,7 @@ namespace libraryManagementSystem
             this.btnDelete.TabIndex = 59;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -94,6 +96,7 @@ namespace libraryManagementSystem
             this.btnUpdate.TabIndex = 58;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearch
             // 
@@ -103,6 +106,7 @@ namespace libraryManagementSystem
             this.btnSearch.TabIndex = 57;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnClear
             // 
@@ -112,6 +116,7 @@ namespace libraryManagementSystem
             this.btnClear.TabIndex = 56;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -259,6 +264,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.lblUserUM);
             this.Name = "frmUserManagement";
             this.Text = "User Management";
+            this.Load += new System.EventHandler(this.frmUserManagement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

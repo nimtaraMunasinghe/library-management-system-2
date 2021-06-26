@@ -34,6 +34,7 @@ namespace libraryManagementSystem
             this.lblDatePB = new System.Windows.Forms.Label();
             this.lblUserPB = new System.Windows.Forms.Label();
             this.tmrProgBar = new System.Windows.Forms.Timer(this.components);
+            this.lblUserTypePB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // prbProgBar
@@ -61,11 +62,21 @@ namespace libraryManagementSystem
             this.lblUserPB.TabIndex = 3;
             this.lblUserPB.Text = "User";
             // 
+            // lblUserTypePB
+            // 
+            this.lblUserTypePB.AutoSize = true;
+            this.lblUserTypePB.Location = new System.Drawing.Point(43, 71);
+            this.lblUserTypePB.Name = "lblUserTypePB";
+            this.lblUserTypePB.Size = new System.Drawing.Size(74, 17);
+            this.lblUserTypePB.TabIndex = 6;
+            this.lblUserTypePB.Text = "User Type";
+            // 
             // frmProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 283);
+            this.Controls.Add(this.lblUserTypePB);
             this.Controls.Add(this.prbProgBar);
             this.Controls.Add(this.lblDatePB);
             this.Controls.Add(this.lblUserPB);
@@ -82,5 +93,6 @@ namespace libraryManagementSystem
         public System.Windows.Forms.Label lblDatePB;
         public System.Windows.Forms.Label lblUserPB;
         private System.Windows.Forms.Timer tmrProgBar;
+        public System.Windows.Forms.Label lblUserTypePB;
     }
 }

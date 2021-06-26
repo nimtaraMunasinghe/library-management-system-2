@@ -45,6 +45,7 @@ namespace libraryManagementSystem
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -52,6 +53,7 @@ namespace libraryManagementSystem
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(203, 22);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
@@ -74,9 +76,9 @@ namespace libraryManagementSystem
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(73, 164);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(73, 17);
+            this.lblUsername.Size = new System.Drawing.Size(55, 17);
             this.lblUsername.TabIndex = 7;
-            this.lblUsername.Text = "Username";
+            this.lblUsername.Text = "User ID";
             // 
             // label1
             // 

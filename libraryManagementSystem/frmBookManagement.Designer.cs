@@ -34,7 +34,7 @@ namespace libraryManagementSystem
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblDateBM = new System.Windows.Forms.Label();
             this.lblUserBM = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@ namespace libraryManagementSystem
             this.btnSearchISBN = new System.Windows.Forms.Button();
             this.txtLanguage = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearchBookID = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbxCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -84,6 +84,7 @@ namespace libraryManagementSystem
             this.btnClear.TabIndex = 52;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -103,14 +104,14 @@ namespace libraryManagementSystem
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
+            // btnRemove
             // 
-            this.btnSearch.Location = new System.Drawing.Point(396, 664);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 29);
-            this.btnSearch.TabIndex = 49;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(396, 664);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(82, 29);
+            this.btnRemove.TabIndex = 49;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -120,6 +121,7 @@ namespace libraryManagementSystem
             this.btnAdd.TabIndex = 48;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblDateBM
             // 
@@ -336,14 +338,14 @@ namespace libraryManagementSystem
             this.label12.TabIndex = 58;
             this.label12.Text = "Language";
             // 
-            // button1
+            // btnSearchBookID
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1045, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 30);
-            this.button1.TabIndex = 60;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearchBookID.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchBookID.Image")));
+            this.btnSearchBookID.Location = new System.Drawing.Point(1045, 183);
+            this.btnSearchBookID.Name = "btnSearchBookID";
+            this.btnSearchBookID.Size = new System.Drawing.Size(37, 30);
+            this.btnSearchBookID.TabIndex = 60;
+            this.btnSearchBookID.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -382,7 +384,7 @@ namespace libraryManagementSystem
             this.ClientSize = new System.Drawing.Size(1119, 797);
             this.Controls.Add(this.cmbxCategory);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearchBookID);
             this.Controls.Add(this.txtLanguage);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnSearchISBN);
@@ -393,7 +395,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblDateBM);
             this.Controls.Add(this.lblUserBM);
@@ -428,7 +430,7 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.Label lblDateBM;
         public System.Windows.Forms.Label lblUserBM;
@@ -456,7 +458,7 @@ namespace libraryManagementSystem
         private System.Windows.Forms.Button btnSearchISBN;
         private System.Windows.Forms.TextBox txtLanguage;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearchBookID;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbxCategory;
     }

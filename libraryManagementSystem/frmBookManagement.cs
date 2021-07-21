@@ -173,7 +173,7 @@ namespace libraryManagementSystem
         {
             try
             {
-                string query_update1 = "update tblBookInfo set book_ISBN = '" + txtISBN.Text + "', book_title '" + txtTitle.Text + "', book_author = '" + txtAuthor.Text + "', book_publisher = '" + txtPublisher.Text + "', book_year = '" + txtPublishDate.Text + "', book_price = '" + txtPrice.Text + "', book_pages = '" + txtNoOfPages.Text + "', book_catNo = '" + cmbxCategory.Text + "', book_languages = '" + txtLanguage.Text + "' where book_ISBN = '" + txtISBN.Text + "'";
+                string query_update1 = "update tblBookInfo set book_ISBN = '" + txtISBN.Text + "', book_title = '" + txtTitle.Text + "', book_author = '" + txtAuthor.Text + "', book_publisher = '" + txtPublisher.Text + "', book_year = '" + txtPublishDate.Text + "', book_price = '" + txtPrice.Text + "', book_pages = '" + txtNoOfPages.Text + "', book_catNo = '" + cmbxCategory.Text + "', book_language = '" + txtLanguage.Text + "' where book_ISBN = '" + txtISBN.Text + "'";
                 SqlCommand cmd = new SqlCommand(query_update1, con);
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -189,7 +189,7 @@ namespace libraryManagementSystem
 
             try
             {
-                string query_update2 = "update tblBook set book_ID = '" + txtBookID.Text + "', book_ISBN = '" + txtISBN.Text + "', book_provider = '" + txtProvider.Text + "'";
+                string query_update2 = "update tblBook set book_ID = '" + txtBookID.Text + "', book_ISBN = '" + txtISBN.Text + "', book_provider = '" + txtProvider.Text + "' where book_ID = '"+txtBookID.Text+"'";
                 SqlCommand cmd = new SqlCommand(query_update2, con);
                 con.Open();
                 cmd.ExecuteNonQuery();

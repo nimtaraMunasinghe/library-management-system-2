@@ -103,6 +103,7 @@ namespace libraryManagementSystem
             this.btnUpdate.TabIndex = 50;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRemove
             // 
@@ -112,6 +113,7 @@ namespace libraryManagementSystem
             this.btnRemove.TabIndex = 49;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -346,6 +348,7 @@ namespace libraryManagementSystem
             this.btnSearchBookID.Size = new System.Drawing.Size(37, 30);
             this.btnSearchBookID.TabIndex = 60;
             this.btnSearchBookID.UseVisualStyleBackColor = true;
+            this.btnSearchBookID.Click += new System.EventHandler(this.btnSearchBookID_Click);
             // 
             // button2
             // 

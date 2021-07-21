@@ -34,7 +34,7 @@ namespace libraryManagementSystem
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=NIMTARA\SQLEXPRESS;Initial Catalog=library-management-system;Integrated Security=True");
-        bool flag;
+        bool hasBook;
         private void btnSearchISBN_Click(object sender, EventArgs e)
         {
             try
@@ -46,7 +46,7 @@ namespace libraryManagementSystem
 
                 if (r.HasRows)
                 {
-                    flag = true;
+                    hasBook = true;
                     while (r.Read())
                     {
                         txtISBN.Text = r[0].ToString();
@@ -62,7 +62,7 @@ namespace libraryManagementSystem
                 }
                 else
                 {
-                    flag = false;
+                    hasBook = false;
                     MessageBox.Show("New Book!");
                 }
             }
@@ -80,14 +80,14 @@ namespace libraryManagementSystem
         {
             try
             {
-                string query_search = "select * from tblBookInfo where book_ISBN LIKE %'" +txtTitle.Text+ "'%";
+                string query_search = "select * from tblBookInfo where book_title LIKE '%" +txtTitle.Text+ "%'";
                 SqlCommand cmd = new SqlCommand(query_search, con);
                 con.Open();
                 SqlDataReader r = cmd.ExecuteReader();
 
                 if (r.HasRows)
                 {
-                    flag = true;
+                    hasBook = true;
                     while (r.Read())
                     {
                         txtISBN.Text = r[0].ToString();
@@ -103,7 +103,7 @@ namespace libraryManagementSystem
                 }
                 else
                 {
-                    flag = false;
+                    hasBook = false;
                     MessageBox.Show("New Book!");
                 }
             }
@@ -122,7 +122,7 @@ namespace libraryManagementSystem
             bool isRemoved = false;
             bool availability = true;
             string removedDate = "";
-            if (flag == false)
+            if (hasBook == false)
             {
                 try
                 {
@@ -148,7 +148,7 @@ namespace libraryManagementSystem
                 SqlCommand cmd = new SqlCommand(query_insert2, con);
                 con.Open();
                 cmd.ExecuteNonQuery();
-                if(flag == true)
+                if(hasBook == true)
                 {
                     MessageBox.Show("Book copy added successfully");
                 }
@@ -166,6 +166,100 @@ namespace libraryManagementSystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            clear();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query_update1 = "update tblBookInfo set book_ISBN = '" + txtISBN.Text + "', book_title '" + txtTitle.Text + "', book_author = '" + txtAuthor.Text + "', book_publisher = '" + txtPublisher.Text + "', book_year = '" + txtPublishDate.Text + "', book_price = '" + txtPrice.Text + "', book_pages = '" + txtNoOfPages.Text + "', book_catNo = '" + cmbxCategory.Text + "', book_languages = '" + txtLanguage.Text + "' where book_ISBN = '" + txtISBN.Text + "'";
+                SqlCommand cmd = new SqlCommand(query_update1, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while updating " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            try
+            {
+                string query_update2 = "update tblBook set book_ID = '" + txtBookID.Text + "', book_ISBN = '" + txtISBN.Text + "', book_provider = '" + txtProvider.Text + "'";
+                SqlCommand cmd = new SqlCommand(query_update2, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updated successfull");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while updating " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+            clear();
+        }
+
+        private void btnSearchBookID_Click(object sender, EventArgs e)
+        {
+            bool removed = false;
+            try
+            {
+                string query_search = "select * from tblBook where book_ID = '"+txtBookID.Text+ "' and isRemoved = '"+removed+"'";
+                SqlCommand cmd = new SqlCommand(query_search, con);
+                con.Open();
+                SqlDataReader r = cmd.ExecuteReader();
+
+                if (r.HasRows)
+                {
+                    while (r.Read())
+                    {
+                        txtBookID.Text = r[0].ToString();
+                        txtISBN.Text = r[1].ToString();
+                        txtProvider.Text = r[2].ToString();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No such book");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while searching " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            bool availability = false;
+            bool isRemoved = true;
+            try
+            {
+                string query_removebook = "update tblBook set book_availability = '"+availability+ "', removed_date = '"+lblDateBM.Text+ "', isRemoved = '"+isRemoved+ "' where book_ID = '"+txtBookID.Text+"'";
+                SqlCommand cmd = new SqlCommand(query_removebook, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Book removed successfully");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while removing book" + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
             clear();
         }
     }

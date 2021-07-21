@@ -262,5 +262,19 @@ namespace libraryManagementSystem
             }
             clear();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            frmHome home = new frmHome();
+            home.Visible = true;
+            this.Visible = false;
+            home.lblUserHome.Text = lblUserBM.Text;
+            home.lblUserTypeHome.Text = lblUserTypeBM.Text;
+        }
+
+        private void frmBookManagement_Load(object sender, EventArgs e)
+        {
+            lblDateBM.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
     }
 }

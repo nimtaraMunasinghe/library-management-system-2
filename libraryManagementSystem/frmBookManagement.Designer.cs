@@ -32,7 +32,6 @@ namespace libraryManagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookManagement));
             this.btnHome = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -75,6 +74,7 @@ namespace libraryManagementSystem
             this.btnHome.TabIndex = 53;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnClear
             // 
@@ -85,15 +85,6 @@ namespace libraryManagementSystem
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(197, 727);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 29);
-            this.btnDelete.TabIndex = 51;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
@@ -396,7 +387,6 @@ namespace libraryManagementSystem
             this.Controls.Add(this.lblUserTypeBM);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
@@ -422,6 +412,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.label1);
             this.Name = "frmBookManagement";
             this.Text = "Book Management";
+            this.Load += new System.EventHandler(this.frmBookManagement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,7 +422,6 @@ namespace libraryManagementSystem
 
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;

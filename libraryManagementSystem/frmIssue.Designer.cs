@@ -99,6 +99,7 @@ namespace libraryManagementSystem
             this.btnSearchMemberID.Size = new System.Drawing.Size(30, 23);
             this.btnSearchMemberID.TabIndex = 5;
             this.btnSearchMemberID.UseVisualStyleBackColor = true;
+            this.btnSearchMemberID.Click += new System.EventHandler(this.btnSearchMemberID_Click);
             // 
             // btnHome
             // 
@@ -151,6 +152,7 @@ namespace libraryManagementSystem
             this.btnSearchIssueID.Size = new System.Drawing.Size(30, 23);
             this.btnSearchIssueID.TabIndex = 5;
             this.btnSearchIssueID.UseVisualStyleBackColor = true;
+            this.btnSearchIssueID.Click += new System.EventHandler(this.btnSearchIssueID_Click);
             // 
             // txtIssueID
             // 
@@ -221,6 +223,7 @@ namespace libraryManagementSystem
             this.btnIssue.TabIndex = 18;
             this.btnIssue.Text = "Issue";
             this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // lblAddress
             // 
@@ -300,6 +303,7 @@ namespace libraryManagementSystem
             this.btnSearchBookID.Size = new System.Drawing.Size(30, 23);
             this.btnSearchBookID.TabIndex = 5;
             this.btnSearchBookID.UseVisualStyleBackColor = true;
+            this.btnSearchBookID.Click += new System.EventHandler(this.btnSearchBookID_Click);
             // 
             // txtBookID
             // 

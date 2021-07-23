@@ -187,11 +187,6 @@ namespace libraryManagementSystem
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Book issued successfully");
                 issuedBooks = issuedBooks + 1;
-                /*if(issuedBooks > bookLimit)
-                {
-                    MessageBox.Show("This member has reached the book limit. Cannot borrow anymore books.");
-                    clearMember();
-                }*/
                 isAvailable = false;
             }
             catch(Exception ex)
@@ -241,23 +236,42 @@ namespace libraryManagementSystem
             clearMember();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            /*try
-            {
-                string query_update = "update tblIssue set issue_ID = '" + txtIssueID.Text + "', book_ID = '" + txtBookID.Text + "', mem_ID = '" + txtMemberID.Text + "' where issue_ID = '" + txtIssueID.Text + "'";
-                SqlCommand cmd = new SqlCommand(query_update, con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error while updating " + ex);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+           
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearBook();
+            clearIssue();
+            clearMember();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            frmHome home = new frmHome();
+            home.Visible = true;
+            this.Visible = false;
+            home.lblUserHome.Text = lblUserBI.Text;
+            home.lblUserTypeHome.Text = lblUserTypeBI.Text;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmIssue_Load(object sender, EventArgs e)
+        {
+            lblDateBI.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+
     }
 }

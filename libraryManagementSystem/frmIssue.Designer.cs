@@ -109,6 +109,7 @@ namespace libraryManagementSystem
             this.btnHome.TabIndex = 22;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // grbIssue
             // 
@@ -196,6 +197,7 @@ namespace libraryManagementSystem
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -215,6 +217,7 @@ namespace libraryManagementSystem
             this.btnClear.TabIndex = 19;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnIssue
             // 
@@ -243,6 +246,7 @@ namespace libraryManagementSystem
             this.btnExit.TabIndex = 23;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtMemberID
             // 
@@ -459,6 +463,7 @@ namespace libraryManagementSystem
             this.Controls.Add(this.grbMember);
             this.Name = "frmIssue";
             this.Text = "Book Issue";
+            this.Load += new System.EventHandler(this.frmIssue_Load);
             this.grbIssue.ResumeLayout(false);
             this.grbIssue.PerformLayout();
             this.grbBook.ResumeLayout(false);

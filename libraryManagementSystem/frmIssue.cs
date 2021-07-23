@@ -43,6 +43,8 @@ namespace libraryManagementSystem
 
         SqlConnection con = new SqlConnection(@"Data Source=NIMTARA\SQLEXPRESS;Initial Catalog=library-management-system;Integrated Security=True");
 
+        int issuedBooks = 0, bookLimit = 0;
+        bool isAvailable = true;
         private void btnSearchBookID_Click(object sender, EventArgs e)
         {
             String availability = "", isRemoved = "";
@@ -95,10 +97,12 @@ namespace libraryManagementSystem
                         if(isRemoved == "True")
                         {
                             MessageBox.Show("This book is removed from library");
+                            clearBook();
                         }
                         else
                         {
                             MessageBox.Show("This book has been borrowd and not returned yet");
+                            clearBook();
                         }
                     }
                 }
@@ -115,7 +119,7 @@ namespace libraryManagementSystem
 
         private void btnSearchMemberID_Click(object sender, EventArgs e)
         {
-            string issued_books = "", bookLimit = "", status = "";
+            string issued_books = "", book_Limit = "", status = "";
             try
             {
                 string query_searchMember = "select * from tblMember where mem_ID = '" + txtMemberID.Text + "'";
@@ -131,26 +135,31 @@ namespace libraryManagementSystem
                         lblAddress.Text = r[3].ToString();
                         lblTelephone.Text = r[4].ToString();
                         issued_books = r[8].ToString();
-                        bookLimit = r[10].ToString();
+                        book_Limit = r[10].ToString();
                         status = r[9].ToString();
                     }
                     int ib = Int16.Parse(issued_books);
-                    int bl = Int16.Parse(bookLimit);
-                    if(status == "active")
+                    int bl = Int16.Parse(book_Limit);
+                    issuedBooks = ib;
+                    bookLimit = bl;
+                    if (status == "active")
                     {
                         if (ib > bl)
                         {
                             MessageBox.Show("Member has reached the book limit");
+                            clearMember();
                         }
                     }
                     else
                     {
                         MessageBox.Show("Inactive Member");
+                        clearMember();
                     }
                 }
                 else
                 {
                     MessageBox.Show("No such member");
+                    clearMember();
                 }
             }
             catch(Exception ex)
@@ -177,6 +186,13 @@ namespace libraryManagementSystem
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Book issued successfully");
+                issuedBooks = issuedBooks + 1;
+                /*if(issuedBooks > bookLimit)
+                {
+                    MessageBox.Show("This member has reached the book limit. Cannot borrow anymore books.");
+                    clearMember();
+                }*/
+                isAvailable = false;
             }
             catch(Exception ex)
             {
@@ -186,9 +202,62 @@ namespace libraryManagementSystem
             {
                 con.Close();
             }
+
+            //update member table issued books
+            try
+            {
+                string query_update = "update tblMember set issued_books = '" + issuedBooks + "' where mem_ID = '" + txtMemberID.Text + "'";
+                SqlCommand cmd = new SqlCommand(query_update, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while updating " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            //update book table book availability
+            try
+            {
+                string query_update = "update tblBook set book_availability = '" + isAvailable + "' where book_ID = '" + txtBookID.Text + "'";
+                SqlCommand cmd = new SqlCommand(query_update, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while updating " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
             clearBook();
             clearIssue();
             clearMember();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                string query_update = "update tblIssue set issue_ID = '" + txtIssueID.Text + "', book_ID = '" + txtBookID.Text + "', mem_ID = '" + txtMemberID.Text + "' where issue_ID = '" + txtIssueID.Text + "'";
+                SqlCommand cmd = new SqlCommand(query_update, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error while updating " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }*/
         }
     }
 }

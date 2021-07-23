@@ -16,7 +16,7 @@ namespace libraryManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIssue());
+            Application.Run(new frmLogin());
         }
     }
 }
